@@ -2,10 +2,17 @@ package com.barros.edson.workshopmongodb.domain;
 
 import java.io.Serializable;
 
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+//para falar que vou usar esse user como no banco de dados
+@Document
+//pode deixar vazio ou utilizar (collection = "user") apos o Document
 public class User implements Serializable {
 //implemets para fazer isso ser transferido como arquivos
 	private static final long serialVersionUID = 1L;
 	//criação dos objetos
+	//acima do atributo chave
+	@Id
 	private String id;
 	private String name;
 	private String email;
